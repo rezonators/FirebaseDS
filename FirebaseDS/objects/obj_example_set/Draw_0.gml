@@ -40,7 +40,8 @@ if (mouseover) {
 				person : {
 					name : choose("John", "Becky", "Harold", "Allison"),
 					age : irandom_range(18, 80)
-				}
+				},
+				numberArray : [irandom(100), irandom(100), irandom(100)]
 			}
 		
 			// set the doc on Firestore
