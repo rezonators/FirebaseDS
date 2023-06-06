@@ -58,8 +58,8 @@
   "optionsFile": "options.json",
   "packageId": "",
   "parent": {
-    "name": "FirestoreDS",
-    "path": "FirestoreDS.yyp",
+    "name": "FirebaseDS",
+    "path": "FirebaseDS.yyp",
   },
   "productId": "",
   "sourcedir": "",
