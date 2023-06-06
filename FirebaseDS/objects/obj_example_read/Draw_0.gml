@@ -1,6 +1,6 @@
 // position button
 x = room_width * 0.5;
-y = room_height * 0.3;
+y = room_height * 0.4;
 
 // coordinates for button rectangle
 var buttonX1 = x - (buttonWidth / 2);
@@ -19,12 +19,12 @@ draw_set_font(fnt_main);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
-draw_text(floor(mean(buttonX1, buttonX2)), floor(mean(buttonY1, buttonY2)), "Set");
+draw_text(floor(mean(buttonX1, buttonX2)), floor(mean(buttonY1, buttonY2)), "Read");
 
 // click on button
 if (mouseover) {
 	if (mouse_check_button_released(mb_left)) {
-		show_debug_message("Set clicked");
+		show_debug_message("Read clicked");
 		
 		// verify that a project id was set
 		var projectID = extension_get_option_value("YYFirebaseFirestore","ProjectID");
@@ -33,19 +33,8 @@ if (mouseover) {
 			exit;
 		}
 		else {
-			// create a doc with some random fields, including a nested struct
-			var doc = {
-				number : irandom(1000),
-				letter : choose("a", "b", "c", "d"),
-				person : {
-					name : choose("John", "Becky", "Harold", "Allison"),
-					age : irandom_range(18, 80)
-				}
-			}
-		
-			// set the doc on Firestore
-			var json = json_stringify(doc);
-			with (obj_control) listener_set = FirebaseFirestore("test/doc").Set(json);
+			// read the doc: test/doc
+			with (obj_control) listener_read = FirebaseFirestore("test/doc").Read();
 		}
 	}
 }
