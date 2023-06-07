@@ -5,7 +5,7 @@ var asyncValue = async_load[? "value"];
 var asyncListener = async_load[? "listener"];
 var asyncErrorMessage = async_load[? "errorMessage"];
 
-show_debug_message("asyncType: " + string(asyncType));
+show_debug_message("async_load: " + json_encode(async_load));
 
 // check if request was successful, show error if not
 if (asyncStatus != 200) {
@@ -21,8 +21,11 @@ if (asyncStatus != 200) {
 if (asyncListener == listener_read && asyncType == FIRESTORE_DOCREAD) {
 	listener_read = -1;
 	show_debug_message("Read successful!");
-	var doc = json_parse(asyncValue);
-	show_message("Read successful:\n" + json_stringify(doc, true));
+	try {
+		var doc = json_parse(asyncValue);
+		show_message("Read successful:\n" + json_stringify(doc, true));
+	}
+	catch (e) show_message("Error parsing doc: " + string(e.message));
 }
 // callback for set
 else if (asyncListener == listener_set && asyncType == FIRESTORE_DOCSET) {
