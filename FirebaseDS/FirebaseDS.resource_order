@@ -96,6 +96,7 @@
     {"name":"Obj_FirebaseFirestore_Collection_Query_options_value_path","order":12,"path":"objects/Obj_FirebaseFirestore_Collection_Query_options_value_path/Obj_FirebaseFirestore_Collection_Query_options_value_path.yy",},
     {"name":"FirebaseREST_parse","order":22,"path":"scripts/FirebaseREST_parse/FirebaseREST_parse.yy",},
     {"name":"Obj_FirebaseREST_Listener_On_Firestore","order":1,"path":"objects/Obj_FirebaseREST_Listener_On_Firestore/Obj_FirebaseREST_Listener_On_Firestore.yy",},
+    {"name":"obj_example_query","order":3,"path":"objects/obj_example_query/obj_example_query.yy",},
     {"name":"Obj_YoYo_Button_toRoom","order":1,"path":"objects/Obj_YoYo_Button_toRoom/Obj_YoYo_Button_toRoom.yy",},
     {"name":"FirebaseListenerUserFunctions_Firestore","order":2,"path":"scripts/FirebaseListenerUserFunctions_Firestore/FirebaseListenerUserFunctions_Firestore.yy",},
     {"name":"FirebaseREST_Firestore_path_isCollection","order":14,"path":"scripts/FirebaseREST_Firestore_path_isCollection/FirebaseREST_Firestore_path_isCollection.yy",},

@@ -109,16 +109,23 @@ function RESTFirebaseFirestore_Collection_Query(struct)
 	ds_map_add(map_compositeFilter,"op","AND")
 	var list_filters = ds_list_create()
 	
-	if(!is_undefined(struct._operations))
-	for(var a = 0 ; a < array_length(struct._operations) ; a++)//if(!is_undefined(struct._operations[0]))
-	{
-		var map_FieldFilter = ds_map_create()
-		ds_map_add_map(map_FieldFilter,"field",FirebaseREST_firestore_fieldReference(struct._operations[a].path))
-		ds_map_add(map_FieldFilter,"op",struct._operations[a].operation)
-		ds_map_add_map(map_FieldFilter,"value",FirebaseREST_firestore_value(struct._operations[a].value))
-		var map_toList = ds_map_create()
-		ds_map_add_map(map_toList,"fieldFilter",map_FieldFilter)
-		ds_list_add(list_filters,map_toList)
+	if(is_array(struct._operations)) {
+		show_debug_message("struct._operations: " + string(struct._operations));
+		for(var a = 0 ; a < array_length(struct._operations) ; a++)//if(!is_undefined(struct._operations[0]))
+		{
+			// convert the value struct into a map for the query operation
+			var _structOpValue = struct._operations[a].value;
+			var _structOpFirestoreValue = FirebaseREST_firestore_value(_structOpValue);
+			var _structOpFirestoreValueMap = json_decode(json_stringify(_structOpFirestoreValue));
+
+			var map_FieldFilter = ds_map_create()
+			ds_map_add_map(map_FieldFilter,"field",FirebaseREST_firestore_fieldReference(struct._operations[a].path))
+			ds_map_add(map_FieldFilter,"op",struct._operations[a].operation)
+			ds_map_add_map(map_FieldFilter,"value",_structOpFirestoreValueMap)
+			var map_toList = ds_map_create()
+			ds_map_add_map(map_toList,"fieldFilter",map_FieldFilter)
+			ds_list_add(list_filters,map_toList)
+		}
 	}
 	
 	for(var a = 0 ; a < ds_list_size(list_filters) ; a++)
