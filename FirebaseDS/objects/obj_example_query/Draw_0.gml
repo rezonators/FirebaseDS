@@ -35,7 +35,7 @@ if (mouseover) {
 		else {
 			// perform query
 			//with (obj_control) listener_query = FirebaseFirestore("test2").Query();
-			with (obj_control) listener_query = FirebaseFirestore("test2").Where("coolnum", "<", 50).Query();
+			with (obj_control) listener_query = FirebaseFirestore("test2").Where("arr", "array_contains", "c").Query();
 		}
 	}
 }

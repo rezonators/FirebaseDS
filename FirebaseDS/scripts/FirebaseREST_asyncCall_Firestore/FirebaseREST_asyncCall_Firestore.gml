@@ -1,7 +1,7 @@
 
 function FirebaseREST_asyncCall_Firestore()
 {
-	show_debug_message(json_encode(async_load))
+	//show_debug_message(json_encode(async_load))
 	
 	var map = ds_map_create()
 	map[?"listener"] = id

@@ -54,7 +54,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.4.0.84",
+    "IDEVersion": "2023.6.0.92",
   },
   "resources": [
     {"id":{"name":"FirebaseREST_Firestore_headerToken","path":"scripts/FirebaseREST_Firestore_headerToken/FirebaseREST_Firestore_headerToken.yy",},},

@@ -6,6 +6,7 @@
 #macro Firestore_Query_greater_than_or_equal "GREATER_THAN_OR_EQUAL"
 #macro Firestore_Query_equal "EQUAL"
 #macro Firestore_Query_not_equal "NOT_EQUAL"
+#macro Firestore_Query_array_contains "ARRAY_CONTAINS"
 #macro Firestore_Query_ASCENDING "ASCENDING"
 #macro Firestore_Query_DESCENDING "DESCENDING"
 
