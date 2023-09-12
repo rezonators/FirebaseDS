@@ -19,8 +19,8 @@ FirebaseFirestore(docPath).Set(json);
 
 You can also query collections to look for documents in which an array contains a specific value. To perform such a query, use the "array_contains" keyword in the Where() call. For example:
 ```
-var collection = "collection"    // insert your own Firestore collection name here
-listener = FirebaseFirestore(collection).Where("myArray", "array_contains", "myValue").Query()
+var collection = "collection";    // insert your own Firestore collection name here
+listener = FirebaseFirestore(collection).Where("myArray", "array_contains", "myValue").Query();
 ```
 
 
